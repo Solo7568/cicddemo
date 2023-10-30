@@ -48,13 +48,13 @@ pipeline {
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "k8smanifest"
-            GIT_USER_NAME = "pavan kumar"
+            GIT_USER_NAME = "Solo7568"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "pavankumarpaladugu14@gmail.com"
-                    git config user.name "pavan kumar"
+                    git config user.name "Solo7568"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" k8smanifest/deployment.yml
                     git add k8smanifest/deployment.yml
