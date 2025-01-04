@@ -6,86 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Page</title>
-    <!-- Google Fonts (Roboto) -->
+    
+    <!-- Google Fonts for sleek typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- External CSS -->
+    
+    <!-- External CSS (Styling the Page) -->
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Roboto', sans-serif;
-            background: #f4f4f9;
+            box-sizing: border-box;
         }
 
-        .login-container {
+        body, html {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #6a11cb, #2575fc);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/knitted-silk.png') no-repeat center center fixed;
-            background-size: cover;
         }
 
-        .login-box {
-            background-color: rgba(255, 255, 255, 0.8);
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
             padding: 30px;
-            width: 350px;
-            border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
         }
 
         h2 {
-            text-align: center;
-            margin-bottom: 20px;
+            font-weight: 600;
             color: #333;
+            margin-bottom: 20px;
         }
 
         .input-field {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid #ddd;
             font-size: 16px;
-            color: #333;
+            transition: border-color 0.3s;
         }
 
         .input-field:focus {
-            border-color: #5c6bc0;
+            border-color: #6a11cb;
             outline: none;
         }
 
         .login-btn {
             width: 100%;
-            padding: 10px;
-            background-color: #5c6bc0;
+            padding: 12px;
+            background: #6a11cb;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .login-btn:hover {
-            background-color: #3f51b5;
+            background: #2575fc;
+        }
+
+        .forgot-password {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #6a11cb;
+        }
+
+        .forgot-password a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        .forgot-password a:hover {
+            color: #2575fc;
         }
 
         .social-login {
-            display: flex;
-            justify-content: space-between;
             margin-top: 20px;
         }
 
         .social-btn {
-            width: 48%;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-            font-size: 14px;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #fff;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .google-btn {
@@ -97,21 +119,8 @@
         }
 
         .social-btn:hover {
-            opacity: 0.8;
-        }
-
-        .forgot-password {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .forgot-password a {
-            text-decoration: none;
-            color: #5c6bc0;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
     </style>
@@ -119,27 +128,28 @@
 
 <body>
     <div class="login-container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="#">
-                <!-- Username Field -->
-                <input type="text" class="input-field" placeholder="Username" required>
-                <!-- Password Field -->
-                <input type="password" class="input-field" placeholder="Password" required>
-                <!-- Login Button -->
-                <button type="submit" class="login-btn">Login</button>
-            </form>
+        <h2>Welcome Back!</h2>
+        
+        <form action="#">
+            <!-- Username Field -->
+            <input type="text" class="input-field" placeholder="Username" required>
+            
+            <!-- Password Field -->
+            <input type="password" class="input-field" placeholder="Password" required>
+            
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">Login</button>
+        </form>
 
-            <!-- Forgot Password Link -->
-            <div class="forgot-password">
-                <a href="#">Forgot your password?</a>
-            </div>
+        <!-- Forgot Password Link -->
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
 
-            <!-- Social Media Login Buttons -->
-            <div class="social-login">
-                <button class="social-btn google-btn">Login with Google</button>
-                <button class="social-btn facebook-btn">Login with Facebook</button>
-            </div>
+        <!-- Social Login Buttons -->
+        <div class="social-login">
+            <button class="social-btn google-btn">Login with Google</button>
+            <button class="social-btn facebook-btn">Login with Facebook</button>
         </div>
     </div>
 </body>
