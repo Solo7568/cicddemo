@@ -98,6 +98,11 @@
             width: 100%;
             max-width: 100%;
             border-radius: 10px;
+            display: none;
+        }
+
+        .slider-images img.active {
+            display: block;
         }
 
         .slider-nav {
@@ -203,7 +208,7 @@
     <!-- Slider Section -->
     <div class="slider-container">
         <div class="slider-images">
-            <img src="https://images.pexels.com/photos/2819094/pexels-photo-2819094.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 1">
+            <img src="https://images.pexels.com/photos/2819094/pexels-photo-2819094.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 1" class="active">
             <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 2">
             <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 3">
             <img src="https://images.pexels.com/photos/2302809/pexels-photo-2302809.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 4">
@@ -264,11 +269,15 @@
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
 
+        // Function to update the slider to the next image
         function updateSlider() {
-            const offset = -currentIndex * 100;
-            document.querySelector('.slider-images').style.transform = `translateX(${offset}%)`;
+            // Remove 'active' class from all images
+            images.forEach(image => image.classList.remove('active'));
+            // Add 'active' class to the current image
+            images[currentIndex].classList.add('active');
         }
 
+        // Show previous image
         prevBtn.addEventListener('click', () => {
             if (currentIndex === 0) {
                 currentIndex = totalImages - 1;
@@ -278,6 +287,7 @@
             updateSlider();
         });
 
+        // Show next image
         nextBtn.addEventListener('click', () => {
             if (currentIndex === totalImages - 1) {
                 currentIndex = 0;
@@ -286,6 +296,16 @@
             }
             updateSlider();
         });
+
+        // Automatic image change every 3 seconds
+        setInterval(() => {
+            if (currentIndex === totalImages - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateSlider();
+        }, 3000); // 3000ms = 3 seconds
     </script>
 
 </body>
