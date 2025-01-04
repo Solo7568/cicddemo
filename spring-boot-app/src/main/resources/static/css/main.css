@@ -1,179 +1,147 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+<!DOCTYPE html>
+<html lang="en">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <!-- Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: #f4f4f9;
+        }
 
-body {
-    background: #000;
-}
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/knitted-silk.png') no-repeat center center fixed;
+            background-size: cover;
+        }
 
-body::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.5;
-    width: 100%;
-    height: 100%;
-    background: url("/logo.jpg");
-    background-position: center;
-}
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
 
-nav {
-    position: fixed;
-    padding: 25px 60px;
-    z-index: 1;
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-nav a img {
-    width: 167px;
-}
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #333;
+        }
 
-.form-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border-radius: 4px;
-    padding: 70px;
-    width: 450px;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, .75);
-}
+        .input-field:focus {
+            border-color: #5c6bc0;
+            outline: none;
+        }
 
-.form-wrapper h2 {
-    color: #fff;
-    font-size: 2rem;
-}
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5c6bc0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-.form-wrapper form {
-    margin: 25px 0 65px;
-}
+        .login-btn:hover {
+            background-color: #3f51b5;
+        }
 
-form .form-control {
-    height: 50px;
-    position: relative;
-    margin-bottom: 16px;
-}
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
 
-.form-control input {
-    height: 100%;
-    width: 100%;
-    background: #333;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0 20px;
-}
+        .social-btn {
+            width: 48%;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.form-control input:is(:focus, :valid) {
-    background: #444;
-    padding: 16px 20px 0;
-}
+        .google-btn {
+            background-color: #db4437;
+        }
 
-.form-control label {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    pointer-events: none;
-    color: #8c8c8c;
-    transition: all 0.1s ease;
-}
+        .facebook-btn {
+            background-color: #3b5998;
+        }
 
-.form-control input:is(:focus, :valid)~label {
-    font-size: 0.75rem;
-    transform: translateY(-130%);
-}
+        .social-btn:hover {
+            opacity: 0.8;
+        }
 
-form button {
-    width: 100%;
-    padding: 16px 0;
-    font-size: 1rem;
-    background: #e50914;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    margin: 25px 0 10px;
-    cursor: pointer;
-    transition: 0.1s ease;
-}
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
 
-form button:hover {
-    background: #c40812;
-}
+        .forgot-password a {
+            text-decoration: none;
+            color: #5c6bc0;
+        }
 
-.form-wrapper a {
-    text-decoration: none;
-}
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
 
-.form-wrapper a:hover {
-    text-decoration: underline;
-}
+    </style>
+</head>
 
-.form-wrapper :where(label, p, small, a) {
-    color: #b3b3b3;
-}
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="#">
+                <!-- Username Field -->
+                <input type="text" class="input-field" placeholder="Username" required>
+                <!-- Password Field -->
+                <input type="password" class="input-field" placeholder="Password" required>
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Login</button>
+            </form>
 
-form .form-help {
-    display: flex;
-    justify-content: space-between;
-}
+            <!-- Forgot Password Link -->
+            <div class="forgot-password">
+                <a href="#">Forgot your password?</a>
+            </div>
 
-form .remember-me {
-    display: flex;
-}
+            <!-- Social Media Login Buttons -->
+            <div class="social-login">
+                <button class="social-btn google-btn">Login with Google</button>
+                <button class="social-btn facebook-btn">Login with Facebook</button>
+            </div>
+        </div>
+    </div>
+</body>
 
-form .remember-me input {
-    margin-right: 5px;
-    accent-color: #b3b3b3;
-}
-
-form .form-help :where(label, a) {
-    font-size: 0.9rem;
-}
-
-.form-wrapper p a {
-    color: #fff;
-}
-
-.form-wrapper small {
-    display: block;
-    margin-top: 15px;
-    color: #b3b3b3;
-}
-
-.form-wrapper small a {
-    color: #0071eb;
-}
-
-@media (max-width: 740px) {
-    body::before {
-        display: none;
-    }
-
-    nav, .form-wrapper {
-        padding: 20px;
-    }
-
-    nav a img {
-        width: 140px;
-    }
-
-    .form-wrapper {
-        width: 100%;
-        top: 43%;
-    }
-
-    .form-wrapper form {
-        margin: 25px 0 40px;
-    }
-}
+</html>
