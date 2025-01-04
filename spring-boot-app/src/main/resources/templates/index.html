@@ -42,7 +42,7 @@
             position: relative;
             width: 100%;
             height: 500px;
-            background-image: url('https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-image: url('https://images.pexels.com/photos/19781593/pexels-photo-19781593/free-photo-of-diner-with-rice-and-vegetables.jpeg?auto=compress&cs=tinysrgb&w=600');
             background-size: cover;
             background-position: center;
             color: white;
@@ -129,18 +129,51 @@
         footer {
             background-color: #222;
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        footer a:hover {
+        footer h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+        }
+
+        footer ul li a:hover {
             text-decoration: underline;
         }
+
+        footer .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        footer .footer-bottom p {
+            font-size: 14px;
+            margin: 0;
+        }
+
     </style>
 </head>
 
@@ -148,7 +181,7 @@
 
     <!-- Navbar -->
     <nav>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Zomato_logo_2019.svg" alt="Zomato Logo">
+        <img src="https://static.startuptalky.com/2023/10/Zomato-Marketing-Strategies-StartupTalky.jpg" alt="Zomato Logo">
         <div>
             <a href="#">Home</a>
             <a href="#">Browse</a>
@@ -170,12 +203,11 @@
     <!-- Slider Section -->
     <div class="slider-container">
         <div class="slider-images">
-            <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Food 1">
-            <img src="https://images.pexels.com/photos/2819094/pexels-photo-2819094.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 2">
-            <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 3">
-            <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 4">
-            <img src="https://images.pexels.com/photos/2302809/pexels-photo-2302809.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 5">
-            <img src="https://images.pexels.com/photos/15869343/pexels-photo-15869343/free-photo-of-bananas-hanging-from-tree.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 6">
+            <img src="https://images.pexels.com/photos/2819094/pexels-photo-2819094.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 1">
+            <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 2">
+            <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 3">
+            <img src="https://images.pexels.com/photos/2302809/pexels-photo-2302809.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 4">
+            <img src="https://images.pexels.com/photos/15869343/pexels-photo-15869343/free-photo-of-bananas-hanging-from-tree.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food 5">
         </div>
         <div class="slider-nav">
             <button class="prev">&#10094;</button>
@@ -185,8 +217,44 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Zomato, All rights reserved.</p>
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <div class="footer-content">
+            <!-- Company Links -->
+            <div>
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Links -->
+            <div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zomato, All rights reserved.</p>
+            <p>Zomato is a trademark of Zomato Media Pvt Ltd.</p>
+        </div>
     </footer>
 
     <script>
